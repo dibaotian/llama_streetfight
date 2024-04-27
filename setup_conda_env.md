@@ -1,3 +1,6 @@
+this project is based on the https://github.com/OpenGenerativeAI/llm-colosseum
+
+
 #### create a enviroment
 #### $conda create -n  llm_streetfight python=3.8.10
 #### To activate this environment, use
