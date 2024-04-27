@@ -10,6 +10,7 @@ this project is based on the https://github.com/OpenGenerativeAI/llm-colosseum
 
 1   In the ollama.py ， set the llama3 and llama2 as model
 
+```python
 game = Game(
         render=True,
         save_game=True,
@@ -24,13 +25,15 @@ game = Game(
             # model="ollama:mistral",
         ),
     )
-
+```
 
 2 in the llm.py register ollama client
+```python
  elif provider == 'ollama':
         from llama_index.llms.ollama import Ollama # need install: pip install llama-index-llms-ollama
     
         return Ollama(model=model_name, request_timeout=90.0)
+```
 
 also need install the llama_index.llms.ollama mosule
 
