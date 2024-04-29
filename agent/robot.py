@@ -331,7 +331,7 @@ To increase your score, move toward the opponent and attack the opponent. To pre
 
     def call_llm(
         self,
-        temperature: float = 0.7,
+        temperature: float = 0.8,
         max_tokens: int = 50,
         top_p: float = 1.0,
     ) -> str:
@@ -351,12 +351,19 @@ The moves you can use are:
 ----
 Reply with a bullet point list of moves. The format should be: `- <name of the move>` separated by a new line.
 Example if the opponent is close:
+if the position of other oppoent is far
+- Fireball 
 - Move closer
 - Medium Punch
 
+if the position of other oppoent is close
+- Super attack 3
+
 Example if the opponent is far:
 - Fireball
-- Move closer"""
+- Move closer
+
+"""
 
         start_time = time.time()
 

@@ -150,7 +150,7 @@ class Game:
         super_arts: List[int] = [3, 3],
         outfits: List[int] = [1, 3],
         frame_shape: List[int] = [0, 0, 0],
-        seed: int = 42,
+        seed: int = 41,
     ):
         """_summary_
 
@@ -272,9 +272,11 @@ class Game:
             # Initialize the episode
             episode = Episode(player_1=self.player_1, player_2=self.player_2)
             # Start the threads that make API calls
+            
             if self.player_1 is not None:
                 player1_thread = PlanAndActPlayer1(game=self, episode=episode)
                 player1_thread.start()
+
             player2_thread = PlanAndActPlayer2(game=self, episode=episode)
             player2_thread.start()
 

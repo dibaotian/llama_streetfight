@@ -16,6 +16,7 @@ def main():
     game = Game(
         render=True,
         save_game=True,
+        outfits = [1,3],
         player_1=Player1(
             nickname="minxie",
             model="ollama:llama3",
