@@ -24,7 +24,7 @@ def main():
         ),
         player_2=Player2(
             nickname="xiemin",
-            model="ollama:llama2",
+            model="ollama:llama3",
             # model="ollama:mistral",
         ),
     )

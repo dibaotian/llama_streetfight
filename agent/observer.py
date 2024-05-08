@@ -22,7 +22,7 @@ def detect_position_from_color(
     # Select the frames where the characters play: between 80 vertical and 200 vertical
     # dump the observation to a file for debugging
     if save_frame:
-        np.save("observation.npy", frame)
+        np.save("observation_start.npy", frame)
 
     frame = frame[100:200, :]
 

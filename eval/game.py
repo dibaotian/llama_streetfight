@@ -150,7 +150,7 @@ class Game:
         super_arts: List[int] = [3, 3],
         outfits: List[int] = [1, 3],
         frame_shape: List[int] = [0, 0, 0],
-        seed: int = 41,
+        seed: int = 42,
     ):
         """_summary_
 

@@ -216,7 +216,7 @@ class Robot:
         position_prompt = ""
         if abs(normalized_relative_position[0]) > 0.1:
             position_prompt += (
-                "You are very far from the opponent. Move closer to the opponent."
+                "You are very far from the opponent. move closer to the opponent."
             )
             if normalized_relative_position[0] < 0:
                 position_prompt += "Your opponent is on the right."
@@ -264,11 +264,11 @@ class Robot:
 
         # Assemble everything
         context = f"""{position_prompt}
-{power_prompt}
-{last_action_prompt}
-Your current score is {reward}. {score_prompt}
-To increase your score, move toward the opponent and attack the opponent. To prevent your score from decreasing, don't get hit by the opponent.
-"""
+                    {power_prompt}
+                    {last_action_prompt}
+                    Your current score is {reward}. {score_prompt}
+                    To increase your score, you need attack the opponent. To prevent your score from decreasing, don't get hit by the opponent.
+                    """
 
         return context
 
@@ -344,26 +344,22 @@ To increase your score, move toward the opponent and attack the opponent. To pre
         # Generate the prompts
         move_list = "- " + "\n - ".join([move for move in META_INSTRUCTIONS])
         system_prompt = f"""You are the best and most aggressive Street Fighter III 3rd strike player in the world.
-Your character is {self.character}. Your goal is to beat the other opponent. You respond with a bullet point list of moves.
-{self.context_prompt()}
-The moves you can use are:
-{move_list}
-----
-Reply with a bullet point list of moves. The format should be: `- <name of the move>` separated by a new line.
-Example if the opponent is close:
-if the position of other oppoent is far
-- Fireball 
-- Move closer
-- Medium Punch
+                        Your character is {self.character}. Your goal is to beat the other opponent. You respond with a bullet point list of moves.
+                        {self.context_prompt()}
+                        The moves you can use are:
+                        {move_list}
+                        ----
+                        Reply with a bullet point list of moves. The format should be: `- <name of the move>` separated by a new line.
+                        Example if the opponent is close:
+                        - Move closer
+                        - Medium Punch
+                        - Dragon Punch
+                        Example if the opponent is far:
+                        - Hurricane Kick
+                        - Move closer
+                        - Fireball
 
-if the position of other oppoent is close
-- Super attack 3
-
-Example if the opponent is far:
-- Fireball
-- Move closer
-
-"""
+                        """
 
         start_time = time.time()
 
